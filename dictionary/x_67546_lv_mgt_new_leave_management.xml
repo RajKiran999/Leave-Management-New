@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element attributes="live_feed=true" label="Leave Management" max_length="40" name="x_67546_lv_mgt_new_leave_management" type="collection">
+        <element label="Balance Casual Leaves" max_length="40" name="balance_casual_leaves" type="integer"/>
+        <element label="Balance Sick Leaves" max_length="40" name="balance_sick_leaves" type="integer"/>
+        <element label="Carry Forward Leaves" max_length="40" name="carry_forward_leaves" type="integer"/>
+        <element label="Employee Name" max_length="32" name="employee_name" reference="sys_user" type="reference" unique="true"/>
+        <element label="Finance Year End" max_length="40" name="finance_year_end" type="glide_date"/>
+        <element label="Finance Year Start" max_length="40" name="finance_year_start" type="glide_date"/>
+        <element default="javascript:current.getTableName();" label="Class" max_length="80" name="sys_class_name" type="sys_class_name"/>
+        <element label="Total Casual Leaves" max_length="40" name="total_casual_leaves" type="integer"/>
+        <element display="true" label="Total Sick Leaves" max_length="40" name="total_sick_leaves" type="integer"/>
+        <index name="index">
+            <element name="employee_name"/>
+        </index>
+    </element>
+</database>

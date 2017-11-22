@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element attributes="live_feed=true" label="Leaves" max_length="40" name="x_67546_lv_mgt_new_leaves" type="collection">
+        <element label="Balance Casual Leaves" max_length="40" name="balance_casual_leaves" reference="x_67546_lv_mgt_new_leave_management" reference_key="balance_casual_leaves" reference_qual="balance_casual_leaves" reference_qual_condition="balance_casual_leaves" type="reference"/>
+        <element label="Balance Sick Leaves" max_length="32" name="balance_sick_leaves" reference="x_67546_lv_mgt_new_leave_management" type="reference" use_dynamic_default="true"/>
+        <element label="Carry Forward Leaves" max_length="32" name="carry_forward_leaves" reference="x_67546_lv_mgt_new_leave_management" type="reference"/>
+        <element label="Comments" max_length="800" name="comments" type="string"/>
+        <element label="Description" max_length="1000" name="description" type="string"/>
+        <element default="javascript:gs.getUserID();" dynamic_default_value="bdcb83a85f220100a9ad2572f2b4773d" label="Employee Name" max_length="32" name="employee_name" reference="sys_user" type="reference" use_dynamic_default="true"/>
+        <element label="From Date" max_length="40" name="from_date" type="glide_date"/>
+        <element label="No of Days" max_length="40" name="no_of_days" type="integer"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" display="true" label="Number" max_length="40" name="number" type="string"/>
+        <element choice="3" default="1" label="State" max_length="40" name="state" type="choice">
+            <choice>
+                <element label="Draft" sequence="0" value="1"/>
+                <element label="Approved" sequence="1" value="2"/>
+                <element label="Rejected" sequence="2" value="3"/>
+                <element label="Regret" sequence="3" value="4"/>
+            </choice>
+        </element>
+        <element label="To Date" max_length="40" name="to_date" type="glide_date"/>
+        <element choice="3" default="1" label="Type of Leave" max_length="40" name="type_of_leave" type="choice">
+            <choice>
+                <element label="Sick Leave" sequence="0" value="1"/>
+                <element label="Casual Leave" sequence="1" value="2"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="balance_casual_leaves"/>
+        </index>
+        <index name="index2">
+            <element name="balance_sick_leaves"/>
+        </index>
+        <index name="index3">
+            <element name="carry_forward_leaves"/>
+        </index>
+        <index name="index4">
+            <element name="employee_name"/>
+        </index>
+    </element>
+</database>
